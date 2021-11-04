@@ -5,15 +5,18 @@
       <div class="card-header">
         User Infomation
       </div>
-      <hr>
-      <section>
-        <%= render 'follow_form' if logged_in? %>
-        <%= render 'shared/stats' %>
-      </section>
+      
       <div class="card-body text-center">
         <%= gravatar_for @user, size:52 %>
         <h5><%=@user.name %></h5>
         <p><%= @user.email%></p>
+
+        <hr>
+      <section>
+        <%= render 'follow_form' if logged_in? %>
+        <%= render 'shared/stats' %>
+      </section>
+
         <% if @user == current_user %>
           <div class="card-footer">
             <%= render "shared/micropost_form"%>
